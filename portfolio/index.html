@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MY PORTFOLIO</title>
+  
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FFB347',
+            secondary: '#4A4A45'
+          },
+          borderRadius: {
+            'none': '0px',
+            'sm': '4px',
+            DEFAULT: '8px',
+            'md': '12px',
+            'lg': '16px',
+            'xl': '20px',
+            '2xl': '24px',
+            '3xl': '32px',
+            'full': '9999px',
+            'button': '8px'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    :where([class^="ri-"])::before { content: "\f3c2"; }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .hero-section {
+      background-image: url(home.jpg);
+      background-color: #2A2A28;
+      background-size: cover;
+      background-position: right center;
+    }
+    
+    .hero-content {
+      background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0) 100%);
+    }
+    
+    .testimonial-section {
+      background-image: url(home.jpg);
+      background-color: #2A2A28;
+      background-size: cover;
+      background-position: center;
+      background-blend-mode: overlay;
+    }
+    
+    .cta-section {
+      background-image: url(home.jpg);
+      background-blend-mode: overlay;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+    .mobile-menu.active {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content {
+        background: rgba(0,0,0,0.85);
+      }
+      .hero-section {
+        background-position: center;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-white">
+  <header class="bg-[#2A2A28] text-white">
+    <div class="container mx-auto px-4 sm:px-6 py-4">
+      <div class="flex justify-between items-center">
+        <div class="flex items-center">
+          <h1 class="text-2xl font-['Pacifico'] text-white mr-4 sm:mr-10">Portfolio</h1>
+          <nav class="hidden md:flex space-x-4 sm:space-x-8">
+            <a href="#home" class="text-white hover:text-primary transition-colors duration-300">Home</a>
+            <a href="#about" class="text-white hover:text-primary transition-colors duration-300">About</a>
+            <a href="#skills" class="text-white hover:text-primary transition-colors duration-300">Skills</a>
+            <a href="#experience" class="text-white hover:text-primary transition-colors duration-300">Experience</a>
+            <a href="#contact" class="text-white hover:text-primary transition-colors duration-300">Contact</a>
+          </nav>
+        </div>
+        <div class="flex items-center space-x-4">
+          <button id="mobileMenuButton" class="md:hidden text-white focus:outline-none">
+            <i class="ri-menu-line ri-2x"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div id="mobileMenu" class="mobile-menu md:hidden mt-4 hidden">
+        <div class="flex flex-col space-y-3 pb-4">
+          <a href="#home" class="text-white hover:text-primary transition-colors duration-300 block py-2">Home</a>
+          <a href="#about" class="text-white hover:text-primary transition-colors duration-300 block py-2">About</a>
+          <a href="#skills" class="text-white hover:text-primary transition-colors duration-300 block py-2">Skills</a>
+          <a href="#experience" class="text-white hover:text-primary transition-colors duration-300 block py-2">Experience</a>
+          <a href="#contact" class="text-white hover:text-primary transition-colors duration-300 block py-2">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="home" class="hero-section relative">
+    <div class="hero-content w-full min-h-[500px] sm:min-h-[600px] flex items-center">
+      <div class="container mx-auto px-4 sm:px-6 py-16 sm:py-20">
+        <div class="max-w-4xl -mt-6 sm:-mt-10">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.4] sm:leading-[1.8] mb-4 sm:mb-6">Hi, I'm DENMARK — Frontend Developer & Designer</h1>
+          <p class="text-base sm:text-lg text-gray-200 mb-6 sm:mb-8">I build clean, modern, and responsive websites & web apps</p>
+          <div class="flex flex-wrap gap-3 sm:gap-4">
+            <a href="#contact" class="bg-primary hover:bg-opacity-90 text-white px-4 sm:px-6 py-2 sm:py-3 font-medium rounded-button whitespace-nowrap text-sm sm:text-base">Hire Me</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="py-12 sm:py-20 bg-white">
+    <div class="text-center mb-8 sm:mb-12">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-800">About</h2>
+    </div>
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row gap-8 sm:gap-12 items-center">
+        <div class="md:w-1/2">
+          <img src="about.jpg"
+            alt="International business consulting session"
+            class="rounded-lg shadow-lg object-cover object-top w-full h-auto">
+        </div>
+        <div class="md:w-1/2 mt-6 sm:mt-0">
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 sm:mb-6">Just making Portfolio for fun hehe</h2>
+          <p class="text-gray-600 mb-4 sm:mb-6">I have no idea what I'm doing</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="py-12 sm:py-20 bg-[#3A3A38] text-white">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12 sm:mb-16">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">My Programming Skills</h2>
+        <p class="text-gray-300 max-w-2xl mx-auto text-sm sm:text-base">Technologies I've mastered through projects and professional experience</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
+        <div class="bg-[#454542] p-6 sm:p-8 rounded-lg hover:transform hover:scale-105 transition-transform duration-300">
+          <div class="w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center bg-primary/20 rounded-full mb-4 sm:mb-6">
+            <i class="ri-code-s-slash-line ri-xl sm:ri-2x text-primary"></i>
+          </div>
+          <h3 class="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Frontend Development</h3>
+          <p class="text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base">HTML5, CSS3, JavaScript (ES6+), React, and responsive design principles for building modern web applications.</p>
+          
+          <div class="mb-3 sm:mb-4">
+            <div class="flex justify-between text-xs sm:text-sm mb-1">
+              <span>HTML/CSS/JS</span>
+              <span>60%</span>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2 sm:h-2.5">
+              <div class="bg-primary h-2 sm:h-2.5 rounded-full" style="width: 60%"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-[#454542] p-6 sm:p-8 rounded-lg hover:transform hover:scale-105 transition-transform duration-300">
+          <div class="w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center bg-primary/20 rounded-full mb-4 sm:mb-6">
+            <i class="ri-braces-line ri-xl sm:ri-2x text-primary"></i>
+          </div>
+          <h3 class="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Systems Programming</h3>
+          <p class="text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base">C programming for system development, embedded systems, and performance-critical applications.</p>
+          
+          <div class="mb-3 sm:mb-4">
+            <div class="flex justify-between text-xs sm:text-sm mb-1">
+              <span>C Programming</span>
+              <span>25%</span>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2 sm:h-2.5">
+              <div class="bg-primary h-2 sm:h-2.5 rounded-full" style="width: 25%"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-[#454542] p-6 sm:p-8 rounded-lg hover:transform hover:scale-105 transition-transform duration-300">
+          <div class="w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center bg-primary/20 rounded-full mb-4 sm:mb-6">
+            <i class="ri-java-line ri-xl sm:ri-2x text-primary"></i>
+          </div>
+          <h3 class="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Enterprise Development</h3>
+          <p class="text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base">Java SE/EE, Spring Framework, and object-oriented design patterns for building scalable applications.</p>
+          
+          <div class="mb-3 sm:mb-4">
+            <div class="flex justify-between text-xs sm:text-sm mb-1">
+              <span>Java</span>
+              <span>25%</span>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2 sm:h-2.5">
+              <div class="bg-primary h-2 sm:h-2.5 rounded-full" style="width: 25%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="max-w-3xl mx-auto mt-8 sm:mt-12 space-y-4 sm:space-y-6">
+        <h3 class="text-lg sm:text-xl font-semibold text-center mb-6 sm:mb-8">Other Technical Skills</h3>
+        
+        <div>
+          <div class="flex justify-between text-xs sm:text-sm mb-1">
+            <span>Python</span>
+            <span>10%</span>
+          </div>
+          <div class="w-full bg-gray-700 rounded-full h-2 sm:h-2.5">
+            <div class="bg-primary h-2 sm:h-2.5 rounded-full" style="width: 10%"></div>
+          </div>
+        </div>
+        
+        <div>
+          <div class="flex justify-between text-xs sm:text-sm mb-1">
+            <span>SQL/Databases</span>
+            <span>1%</span>
+          </div>
+          <div class="w-full bg-gray-700 rounded-full h-2 sm:h-2.5">
+            <div class="bg-primary h-2 sm:h-2.5 rounded-full" style="width: 1%"></div>
+          </div>
+        </div>
+        
+        <div>
+          <div class="flex justify-between text-xs sm:text-sm mb-1">
+            <span>Git/Version Control</span>
+            <span>1%</span>
+          </div>
+          <div class="w-full bg-gray-700 rounded-full h-2 sm:h-2.5">
+            <div class="bg-primary h-2 sm:h-2.5 rounded-full" style="width: 1%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id = "experience" class="relative testimonial-section">
+    <div class="absolute inset-0">
+      <div class="flex h-full">
+        <div class="w-1/2 bg-primary"></div>
+        <div class="w-1/2 bg-white"></div>
+      </div>
+    </div>
+    <div class="container mx-auto relative">
+      <div class="flex flex-col md:flex-row">
+        <div class="md:w-1/2 flex items-center justify-center md:justify-start">
+          <img src="exp.png"
+               alt="Executive testimonial"
+               class="w-full max-w-[500px] sm:max-w-[700px] h-auto sm:h-[500px] object-contain relative z-40">
+        </div>
+        <div class="md:w-1/2 py-12 sm:py-20 px-4 sm:px-12">
+          <div class="p-6 sm:p-8 h-full">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mb-3 sm:mb-4">
+              <i class="ri-double-quotes-l ri-2xl sm:ri-3x text-primary"></i>
+            </div>
+            <p class="text-gray-700 text-base sm:text-lg mb-4 sm:mb-6">"I don't have experience huhuhu"</p>
+            <div class="flex items-center">
+              <div>
+                <h4 class="font-['Pacifico'] text-gray-900">Denmark Arenas</h4>
+                <p class="text-gray-600">GWAPO</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-12 sm:py-20 bg-[#F8F9FA]">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="text-center mb-8 sm:mb-12">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">Contact</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 items-start">
+        <div class="bg-white p-6 sm:p-8 rounded-xl shadow-sm border border-gray-100">
+          <div class="space-y-6 sm:space-y-8">
+            <div class="group flex items-start transition-all duration-300 hover:bg-gray-50 px-3 sm:px-4 py-2 sm:py-3 rounded-lg">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-primary/10 rounded-xl mr-4 mt-1 group-hover:bg-primary">
+                <i class="ri-phone-line text-primary group-hover:text-white transition"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-base sm:text-lg font-semibold text-gray-800 mb-1 flex items-center">
+                  Phone
+                </h3>
+                <p class="text-gray-600 mb-1 text-sm sm:text-base">09632110996</p>
+                  <p class="text-xs sm:text-sm"><i class="ri-time-line mr-1"></i> Mon-Fri, 9am-6pm 
+                </p>
+              </div>
+            </div>
+            
+            <div class="group flex items-start transition-all duration-300 hover:bg-gray-50 px-3 sm:px-4 py-2 sm:py-3 rounded-lg">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-primary/10 rounded-xl mr-4 mt-1 group-hover:bg-primary">
+                <i class="ri-mail-line text-primary group-hover:text-white transition"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-base sm:text-lg font-semibold text-gray-800 mb-1">Email</h3>
+                <p class="text-gray-600 text-sm sm:text-base">
+                  denmarkarenas1@gmail.com
+                </p>
+                <p class="text-xs sm:text-sm text-gray-500 mt-1 flex items-center">
+                  <i class="ri-checkbox-circle-line mr-1 text-green-500"></i> Typically replies within 2 second
+                </p>
+              </div>
+            </div>
+            
+            <div class="group flex items-start transition-all duration-300 hover:bg-gray-50 px-3 sm:px-4 py-2 sm:py-3 rounded-lg">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-primary/10 rounded-xl mr-4 mt-1 group-hover:bg-primary">
+                <i class="ri-map-pin-line text-primary group-hover:text-white transition"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-base sm:text-lg font-semibold text-gray-800 mb-1">Location</h3>
+                <div class="text-gray-600 text-sm sm:text-base">
+                  <p class="font-medium">Cebu</p>
+                  <p>Montealegre, San Francisco, Cebu</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg">
+            <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-4 sm:mb-6">Send Us a Message</h3>
+            <form class="space-y-3 sm:space-y-4" action="https://api.web3forms.com/submit" method="POST" id="contactForm" onSubmit="event.preventDefault(); this.submit();">
+              <div class="form-group">
+                <input type="hidden" name="access_key" value="a285fce8-5aee-461c-8b86-a98f2f0e7cf3">
+                <input type="text" id="Your Name" class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded focus:outline-none focus:border-primary" placeholder="Your Name" required>
+              </div>
+
+              <div class="form-group">
+                <input type="email" id="Email Address" class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded focus:outline-none focus:border-primary" placeholder="Email Address" required>
+              </div>
+
+              <div class="form-group">
+                <textarea id="Your Message" name="Message" rows="4" class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded focus:outline-none focus:border-primary" required></textarea>
+              </div>
+
+              <button type="submit" class="w-full bg-primary hover:bg-opacity-90 text-white py-3 sm:py-4 font-medium !rounded-button text-sm sm:text-base">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-gradient-to-b from-[#2A2A28] to-[#1E1E1C] text-white pt-12 sm:pt-20 pb-8 sm:pb-10">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 mb-12 sm:mb-16">
+        
+        <div class="space-y-4 sm:space-y-6">
+          <h1 class="text-3xl sm:text-4xl font-['Pacifico'] text-white tracking-wide">Portfolio</h1>
+          <p class="text-gray-400 leading-relaxed text-sm sm:text-base">
+            A portfolio showcasing my skills and projects as a frontend developer. Here you can find my work, experience, and how to contact me.
+          </p>
+          <div class="flex space-x-3 sm:space-x-4 pt-2 sm:pt-4">
+            <a href="https://www.facebook.com/share/15mgHZjSd9/" class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#1877F2] transition-all duration-300 hover:scale-110 shadow-lg">
+              <i class="ri-facebook-fill text-xl sm:text-2xl text-white"></i>
+            </a>
+            <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#1DA1F2] transition-all duration-300 hover:scale-110 shadow-lg">
+              <i class="ri-twitter-fill text-xl sm:text-2xl text-white"></i>
+            </a>
+            <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#0A66C2] transition-all duration-300 hover:scale-110 shadow-lg">
+              <i class="ri-linkedin-fill text-xl sm:text-2xl text-white"></i>
+            </a>
+            <a href="https://www.instagram.com/kramxs_?igsh=NGI5d2d0bGYyZjJm" class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#E1306C] transition-all duration-300 hover:scale-110 shadow-lg">
+              <i class="ri-instagram-fill text-xl sm:text-2xl text-white"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 pb-2 border-b border-white/10 uppercase tracking-wider">Contact Us</h3>
+          <ul class="space-y-3 sm:space-y-5 text-xs sm:text-sm text-gray-300">
+            <li class="flex items-start group hover:text-white transition-all duration-300">
+              <div class="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center bg-primary/20 rounded-full mr-3 sm:mr-4 mt-1 group-hover:bg-primary">
+                <i class="ri-map-pin-line text-primary group-hover:text-white transition"></i>
+              </div>
+              <span>Cebu<br>Montealegre, San Francisco, Cebu</span>
+            </li>
+            <li class="flex items-center group hover:text-white transition-all duration-300">
+              <div class="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center bg-primary/20 rounded-full mr-3 sm:mr-4 group-hover:bg-primary">
+                <i class="ri-phone-line text-primary group-hover:text-white transition"></i>
+              </div>
+              <span>09632110996</span>
+            </li>
+            <li class="flex items-center group hover:text-white transition-all duration-300">
+              <div class="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center bg-primary/20 rounded-full mr-3 sm:mr-4 group-hover:bg-primary">
+                <i class="ri-mail-line text-primary group-hover:text-white transition"></i>
+              </div>
+              <span>denmarkarenas1@gmail.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 pt-4 sm:pt-6 text-center text-xs sm:text-sm text-gray-500">
+        <p>&copy; 2025 SILING PAIT</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollToTop" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 bg-primary text-white p-2 sm:p-3 rounded-full shadow-lg hover:bg-opacity-90 transition-colors duration-300 hidden">
+    <i class="ri-arrow-up-line"></i>
+  </button>
+
+  <script>
+    const scrollToTopButton = document.getElementById('scrollToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollToTopButton.classList.remove('hidden');
+      } else {
+        scrollToTopButton.classList.add('hidden');
+      }
+    });
+    scrollToTopButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    const mobileMenuButton = document.getElementById('mobileMenuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+    });
+
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+      });
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        const headerHeight = document.querySelector('header').offsetHeight;
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - headerHeight,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      const formData = new FormData(this);
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          alert('Message sent successfully!');
+          this.reset();
+        } else {
+          alert('Error sending message. Please try again.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Error sending message. Please try again.');
+      });
+    });
+  </script>
+</body>
+</html>
